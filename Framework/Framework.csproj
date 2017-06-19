@@ -49,6 +49,7 @@
     <Compile Include="Dao\BaseDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebElements\CheckBox.cs" />
+    <Compile Include="WebElements\RadioButtonGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
