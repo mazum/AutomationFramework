@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Framework.Extensions;
+using Framework.Extensions;
 
 namespace Framework.WebElements
 {
@@ -62,11 +62,11 @@ namespace Framework.WebElements
             return tableRows;
         }
 
-        /*public IWebElement GetTitleElement(string columnTitle)
+        public IWebElement GetTitleElement(string columnTitle)
         {
             var columnTitleCell = By.XPath("./thead/tr[1]/th[" + GetColumnIndex(columnTitle) + "]");
             return webTable.FindElement(columnTitleCell);
-        }*/
+        }
 
         public string GetColumnTitle(int columnIndex)
         {
@@ -74,7 +74,7 @@ namespace Framework.WebElements
             return webTable.FindElement(columnTitle).Text;
         }
 
-        /*public int GetColumnIndex(string columnTitle, bool isRegEx = false)
+        public int GetColumnIndex(string columnTitle, bool isRegEx = false)
         {
             IList<IWebElement> titles = webTable.FindElements(By.XPath("./thead / tr[1] / th"));
             for (int i = 0; i < titles.Count; i++)
@@ -92,7 +92,7 @@ namespace Framework.WebElements
             }
             // no match found
             throw new NoSuchElementException("Unable to find element with text \"" + columnTitle + "\" in table head");
-        }*/
+        }
 
         public IWebElement GetCellElement(int rowIndex, int columnIndex)
         {
@@ -100,10 +100,10 @@ namespace Framework.WebElements
             return webTable.FindElement(cell);
         }
 
-        /*public IWebElement GetCellElement(int rowIndex, string columnTitle, bool isRegEx = false)
+        public IWebElement GetCellElement(int rowIndex, string columnTitle, bool isRegEx = false)
         {
             return GetCellElement(rowIndex, GetColumnIndex(columnTitle, isRegEx));
-        }*/
+        }
 
         public IWebElement GetCellInputElement(int rowIndex, int columnIndex)
         {
@@ -111,10 +111,10 @@ namespace Framework.WebElements
             return webTable.FindElement(cell);
         }
 
-        /*public IWebElement GetCellInputElement(int rowIndex, string columnTitle, bool isRegEx = false)
+        public IWebElement GetCellInputElement(int rowIndex, string columnTitle, bool isRegEx = false)
         {
             return GetCellInputElement(rowIndex, GetColumnIndex(columnTitle, isRegEx));
-        }*/
+        }
 
         public WebTableRow FindRowWithValueInColumn(int columnIndex, string value)
         {
@@ -129,7 +129,7 @@ namespace Framework.WebElements
             throw new NoSuchElementException("Unable to find element with text \"" + value + "\" in table column " + columnIndex);
         }
 
-        /*public WebTableRow FindRowWithValueInColumn(string columnTitle, string value)
+        public WebTableRow FindRowWithValueInColumn(string columnTitle, string value)
         {
             return FindRowWithValueInColumn(GetColumnIndex(columnTitle), value);
         }
@@ -164,7 +164,7 @@ namespace Framework.WebElements
             }
             // no match found
             throw new NoSuchElementException("Unable to find row matching \"" + pattern + "\" in table");
-        }*/
+        }
 
         public IList<IWebElement> GetCellsInColumn(int columnIndex)
         {
@@ -176,10 +176,10 @@ namespace Framework.WebElements
             return cells;
         }
 
-        /*public IList<IWebElement> GetCellsInColumn(string columnTitle)
+        public IList<IWebElement> GetCellsInColumn(string columnTitle)
         {
             return GetCellsInColumn(GetColumnIndex(columnTitle));
-        }*/
+        }
     }
 
     public class WebTableRow
