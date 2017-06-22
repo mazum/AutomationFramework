@@ -23,13 +23,13 @@ namespace Framework.Extensions
             return amount.ToString("C", culture);
         }
 
-        /*public static string ToPercentage(this decimal percent, int decimalDigits = 2)
+        public static string ToPercentage(this decimal percent, int decimalDigits = 2)
         {
             var format = "#0";
             if (decimalDigits != 0)
                 format = format + "." + new string('0', decimalDigits);
             format = format + "%";
             return percent.ToString(format);
-        }*/
+        }
     }
 }
