@@ -24,5 +24,13 @@ namespace Framework.Extensions
                 textList.Add(element.Text.GetRegExMatch(regExPattern).Trim());
             return textList;
         }
+
+        public static IList<string> GetCaptureGroupTextFromElements(this IList<IWebElement> elementList, string regExPattern)
+        {
+            var textList = new List<string>();
+            foreach (var element in elementList)
+                textList.Add(element.Text.GetRegExCaptureGroup(regExPattern).Trim());
+            return textList;
+        }
     }
 }
