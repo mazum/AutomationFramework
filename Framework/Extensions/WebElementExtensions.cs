@@ -32,5 +32,13 @@ namespace Framework.Extensions
                 textList.Add(element.Text.GetRegExCaptureGroup(regExPattern).Trim());
             return textList;
         }
+
+        public static IList<string> GetAttributeFromElements(this IList<IWebElement> elementList, string attributeName)
+        {
+            var attributeValues = new List<string>();
+            foreach (var element in elementList)
+                attributeValues.Add(element.GetAttribute(attributeName));
+            return attributeValues;
+        }
     }
 }
