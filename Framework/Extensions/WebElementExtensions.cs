@@ -40,5 +40,22 @@ namespace Framework.Extensions
                 attributeValues.Add(element.GetAttribute(attributeName));
             return attributeValues;
         }
+
+        public static void HighlightElement(this IWebElement element)
+        {
+            var wrappedElement = (IWrapsDriver)element;
+            var javascript = (IJavaScriptExecutor)wrappedElement.WrappedDriver;
+            javascript.ExecuteScript(@"arguments[0].style.cssText = 'border: 2px solid red;'", new object[] { element });
+            System.Threading.Thread.Sleep(1000);
+            javascript.ExecuteScript(@"arguments[0].style.cssText = 'border: 0px;'", new object[] { element });
+        }
+
+        public static void HoverOver(this IWebElement element, IWebDriver driver, bool isMobile = false)
+        {
+            if (isMobile)
+                element.Click();
+            else
+                new Actions(driver).MoveToElement(element).Perform();
+        }
     }
 }
