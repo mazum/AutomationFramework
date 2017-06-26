@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Internal;
-//using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Support.UI;
 
 namespace Framework.Extensions
 {
@@ -39,6 +39,11 @@ namespace Framework.Extensions
             foreach (var element in elementList)
                 attributeValues.Add(element.GetAttribute(attributeName));
             return attributeValues;
+        }
+
+        public static SelectElement FindSelectElement(this IWebElement element, By locator)
+        {
+            return new SelectElement(element.FindElement(locator));
         }
 
         public static void HighlightElement(this IWebElement element)
