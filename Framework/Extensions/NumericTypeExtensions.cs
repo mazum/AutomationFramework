@@ -23,7 +23,8 @@ namespace Framework.Extensions
             return amount.ToString("C", culture);
         }
 
-        public static string ToPercentage(this decimal percent, int decimalDigits = 2)
+        public static string ToPercentage(this decimal percent, int
+            decimalDigits = 2)
         {
             var format = "#0";
             if (decimalDigits != 0)
