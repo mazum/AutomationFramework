@@ -34,7 +34,7 @@ namespace Framework.ZTargetProject.StepDefinitions
         private void SetMemberAttributes(string username)
         {
             Console.WriteLine("Username: " + username);
-            ScenarioContextData.Current.Username = username;                                                                                                                                            var password="wood5Floor";
+            ScenarioContextData.Current.Username = username;                                                                                                                                            var password="";
             ScenarioContextData.Current.Password = password;
             ScenarioContextData.Current.AccountType = "Defined Benifit Division";
             ScenarioContextData.Current.AccountBaseType = "Super";
