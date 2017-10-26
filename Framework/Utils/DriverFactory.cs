@@ -141,7 +141,7 @@ namespace Framework.Utils
                 var screenshotFilePath = Path.Combine(artifactDirectory, fileNameBase + "_screenshot.png");
                 try
                 {
-                    screenshot.SaveAsFile(screenshotFilePath, ImageFormat.Png);
+                    screenshot.SaveAsFile(screenshotFilePath, ScreenshotImageFormat.Png);
                 }
                 catch (Exception e)
                 {
