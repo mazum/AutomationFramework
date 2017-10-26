@@ -31,12 +31,21 @@ namespace Framework.ZTargetProject.StepDefinitions
             SetMemberAttributes(username);
         }
 
+        [Given(@"I am a registered Accumulation 1 member")]
+        public void GivenIAmARegisteredAccumulation1Member()
+        {
+            string username = "abhi4u82";
+            SetMemberAttributes(username);
+        }
+
+
         private void SetMemberAttributes(string username)
         {
             Console.WriteLine("Username: " + username);
-            ScenarioContextData.Current.Username = username;                                                                                                                                            var password="";
+            ScenarioContextData.Current.Username = username;
+            var password="";
             ScenarioContextData.Current.Password = password;
-            ScenarioContextData.Current.AccountType = "Defined Benifit Division";
+            ScenarioContextData.Current.AccountType = "Accumulation 1";
             ScenarioContextData.Current.AccountBaseType = "Super";
             ScenarioContextData.Current.MemberNumber = "14223482";
         }
