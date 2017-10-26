@@ -71,7 +71,7 @@ namespace Framework.Utils
                     break;
                 case "mobileemulation":
                     var mobileOptions = new ChromeOptions();
-                    mobileOptions.EnableMobileEmulation("Apple iPhone 6");
+                    mobileOptions.EnableMobileEmulation("iPhone 6");
                     mobileOptions.AddArguments("disable-infobars");
                     mobileOptions.AddUserProfilePreference("credentials_enable_service", false);
                     mobileOptions.AddUserProfilePreference("password_manager_enabled", false);
