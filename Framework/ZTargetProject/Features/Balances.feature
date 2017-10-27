@@ -32,12 +32,12 @@ Scenario: View estimated balances for Accumulation 1 Member
 	When I navigate to the Balances page
 	Then I can see my estimated balance on the Balances Page
 	| Key                                | Value      |
-	| Account Balance                    | $14,797.29 |
+	| Account Balance                    | $14,819.77 |
 	| Accumulation Balance               | NA         |
 	| DBD Balance                        | NA         |
-	| Preserved Balance                  | $14,797.29 |
+	| Preserved Balance                  | $14,819.77 |
 	| Non-Preserved Restricted Balance   | $0.00      |
 	| Non-Preserved Unrestricted Balance | $0.00      |
-	| Balance Effective Date             | 26-10-2017 | 
+	| Balance Effective Date             | 28-10-2017 | 
 	When I navigate to the Overview page
 	Then I can see my balance summary on the Overview Page
