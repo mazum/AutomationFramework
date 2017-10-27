@@ -25,7 +25,7 @@ Scenario Outline: View estimated balances for DBD Member
 	| Join Date        | Condition(s) |
 	| after 1-Jan-2015 | NA           |
 
-@Mobile
+@Mobile @Devices
 Scenario: View estimated balances for Accumulation 1 Member
 	Given I am a registered Accumulation 1 member
 	And I am logged into the MOL site
