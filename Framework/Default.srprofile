@@ -17,6 +17,12 @@
 		<Target name="mobileEmulation">
 			<Filter>@Mobile</Filter>
 		</Target>
+		<Target name="appium-ios-iphone7plus">
+			<Filter>@Mobile &amp; @Devices</Filter>
+		</Target>
+		<Target name="appium-android-one-plus-one">
+			<Filter>@Mobile &amp; @Devices</Filter>
+		</Target>
 	</Targets>
 	
 	<DeploymentTransformation>
