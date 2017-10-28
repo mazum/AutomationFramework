@@ -12,6 +12,9 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.PhantomJS;
 using TechTalk.SpecFlow;
 using Framework.Extensions;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.Enums;
 
 namespace Framework.Utils
 {
@@ -30,6 +33,7 @@ namespace Framework.Utils
 
         private static void CreateNewDriverInstance(string browser, string gridUrl)
         {
+            DesiredCapabilities capabilities;
             switch (browser.ToLower())
             {
                 case "ie":
@@ -60,7 +64,7 @@ namespace Framework.Utils
                     options.AddUserProfilePreference("credentials_enable_service", false);
                     options.AddUserProfilePreference("password_manager_enabled", false);
                     options.AddUserProfilePreference("download.prompt_for_download", false);
-                    var capabilities = (DesiredCapabilities)options.ToCapabilities();
+                    capabilities = (DesiredCapabilities)options.ToCapabilities();
                     capabilities.SetCapability(CapabilityType.Platform, "WINDOWS");
                     capabilities.SetCapability(CapabilityType.IsJavaScriptEnabled, true);
                     if (gridUrl.IsNullOrEmpty())
@@ -91,6 +95,14 @@ namespace Framework.Utils
                     Driver = new PhantomJSDriver(service);
                     //Driver.Manage().Window.Size = new Size(337, 667);
                     //isMobile = true;
+                    break;
+                case "appium-android-one-plus-one":
+                    capabilities=new DesiredCapabilities();
+                    capabilities.SetCapability(MobileCapabilityType.PlatformName, "ANDROID");
+                    capabilities.SetCapability(MobileCapabilityType.DeviceName, "AndroidDevices");
+                    capabilities.SetCapability(MobileCapabilityType.BrowserName, "Chrome");
+                    Driver = new AndroidDriver<AppiumWebElement>(capabilities, TimeSpan.FromSeconds(240));
+                    isMobile = true;
                     break;
                 default:
                     throw new NotImplementedException();
