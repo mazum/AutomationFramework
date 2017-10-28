@@ -101,7 +101,7 @@ namespace Framework.Utils
                     capabilities.SetCapability(MobileCapabilityType.PlatformName, "ANDROID");
                     capabilities.SetCapability(MobileCapabilityType.DeviceName, "AndroidDevices");
                     capabilities.SetCapability(MobileCapabilityType.BrowserName, "Chrome");
-                    Driver = new AndroidDriver<AppiumWebElement>(capabilities, TimeSpan.FromSeconds(240));
+                    Driver = new AndroidDriver<AppiumWebElement>(new Uri(AppSettings.Current.AppiumUrl), capabilities, TimeSpan.FromSeconds(240));
                     isMobile = true;
                     break;
                 default:
