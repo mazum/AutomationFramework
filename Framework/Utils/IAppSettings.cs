@@ -11,5 +11,6 @@
         bool EnableCookieInfoLogging { get; set; }
         string ScreenshotFolder { get; set; }
         bool IgnoreProductionIssues { get; set; }
+        string AppiumUrl { get; set; }
     }
 }
